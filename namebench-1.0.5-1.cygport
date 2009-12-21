@@ -1,0 +1,9 @@
+inherit distutils
+
+DESCRIPTION="DNS server benchmark utility"
+HOMEPAGE="http://code.google.com/p/namebench/"
+SRC_URI="http://namebench.googlecode.com/files/${P}.tgz"
+PATCH_URI="1.0.5-datadir.patch"
+
+# use the latest upstream deps instead of those included within
+export NO_THIRD_PARTY=1

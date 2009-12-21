@@ -1,0 +1,31 @@
+--- origsrc/namebench-1.0.5/libnamebench/util.py	2009-12-11 15:30:59.000000000 -0600
++++ src/namebench-1.0.5/libnamebench/util.py	2009-12-21 10:36:59.582047300 -0600
+@@ -89,7 +89,7 @@ def FindDataFile(filename):
+   if os.path.isabs(filename):
+     return filename
+   
+-  other_places = [os.path.join(sys.prefix, 'namebench'),
++  other_places = [os.path.join(sys.prefix, 'share', 'namebench'),
+                   '/usr/local/etc/namebench',
+                   '/etc/namebench']
+   for dir in reversed(sys.path):
+--- origsrc/namebench-1.0.5/setup.py	2009-12-11 15:31:06.000000000 -0600
++++ src/namebench-1.0.5/setup.py	2009-12-21 10:52:51.790510500 -0600
+@@ -112,14 +112,14 @@ setup(name='namebench',
+       license='Apache 2.0',
+       scripts=['namebench.py'],
+       data_files=[
+-          ('namebench', ['namebench.cfg']),
+-          ('namebench/templates',
++          ('share/namebench', ['namebench.cfg']),
++          ('share/namebench/templates',
+            ['templates/ascii.tmpl',
+                 'templates/html.tmpl',
+                 'templates/style.css'
+            ]
+           ),
+-          ('namebench/data', ['data/alexa-top-10000-global.txt'])
++          ('share/namebench/data', ['data/alexa-top-10000-global.txt'])
+       ],
+ 
+       # py2exe specific garbarge below.
