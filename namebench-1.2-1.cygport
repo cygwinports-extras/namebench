@@ -3,6 +3,15 @@ inherit distutils
 DESCRIPTION="DNS server benchmark utility"
 HOMEPAGE="http://code.google.com/p/namebench/"
 SRC_URI="http://namebench.googlecode.com/files/${P}-source.tgz"
+PATCH_URI="1.2-datadir.patch"
 
 # use the latest upstream deps instead of those included within
 export NO_THIRD_PARTY=1
+
+src_install() {
+	cd ${B}
+	distutils_install
+
+	newicon ${S}/third_party/Crystal_Clear/Crystal_Clear_app_linneighborhood.png namebench.png
+	make_desktop_entry namebench.py Namebench namebench "System"
+}
