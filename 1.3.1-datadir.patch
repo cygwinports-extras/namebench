@@ -1,0 +1,25 @@
+--- origsrc/namebench-1.3.1/setup.py	2010-06-06 11:19:39.000000000 -0500
++++ src/namebench-1.3.1/setup.py	2010-12-24 01:08:49.432425800 -0600
+@@ -114,19 +114,19 @@ setup(name='namebench',
+       license='Apache 2.0',
+       scripts=['namebench.py'],
+       data_files=[
+-          ('namebench/config',
++          ('share/namebench/config',
+            ['config/namebench.cfg',
+             'config/hostname_reference.cfg',
+             'config/data_sources.cfg']
+           ),
+-          ('namebench/templates',
++          ('share/namebench/templates',
+            ['templates/ascii.tmpl',
+             'templates/html.tmpl',
+             'templates/resolv.conf.tmpl',
+             'templates/style.css'
+            ]
+           ),
+-          ('namebench/data',
++          ('share/namebench/data',
+            ['data/alexa-top-2000-domains.txt',
+             'data/cache-hit.txt',
+             'data/cache-miss.txt',
